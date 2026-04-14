@@ -1,0 +1,337 @@
+/* ================= BASE ================= */
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #111, #000);
+  font-family: Arial, sans-serif;
+  color: #fff;
+  padding-bottom: 60px;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 30px;
+}
+
+/* ================= FORM ================= */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+}
+
+/* ================= TÍTULO ================= */
+h1 {
+  margin-bottom: 25px;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+/* ================= CARD ================= */
+.card {
+  background: #1a1a1a;
+  padding: 22px;
+  border-radius: 14px;
+  width: 290px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  align-items: center;
+
+  box-shadow: 0 0 30px rgba(0,0,0,0.7);
+  border: 1px solid #2a2a2a;
+}
+
+/* ================= TEXTOS ================= */
+#welcome {
+  font-size: 17px;
+  margin-bottom: 20px;
+  opacity: 0.95;
+}
+
+#info {
+  font-size: 14px;
+  opacity: 0.75;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* ================= NÍVEL ================= */
+.nivel-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.nivel-label {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.nivel-box select {
+  max-width: 120px;
+  height: 34px;
+}
+
+/* ================= LOG ================= */
+#log {
+  width: 290px;
+  margin-top: 25px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  max-height: 200px;
+  overflow-y: auto;
+
+  scrollbar-width: none;
+}
+
+#log::-webkit-scrollbar {
+  display: none;
+}
+
+/* ================= TENTATIVAS ================= */
+.tentativa {
+  background: #161616;
+  padding: 10px 14px;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: monospace;
+  font-size: 14px;
+
+  border: 1px solid #222;
+  transition: 0.2s;
+}
+
+.tentativa:hover {
+  transform: scale(1.02);
+  border-color: #333;
+}
+
+/* cores */
+.codigo { color: #4da6ff; }
+.correto { color: #00ff88; }
+.deslocado { color: #ffaa00; }
+
+/* ================= INPUTS ================= */
+input,
+select {
+  width: 100%;
+  max-width: 230px;
+  height: 36px;
+
+  border-radius: 8px;
+  border: 1px solid #2a2a2a;
+
+  background: #0f0f0f;
+  color: #fff;
+  font-size: 15px;
+
+  text-align: center;
+  letter-spacing: 2px;
+
+  transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #00aaff;
+  box-shadow: 0 0 8px #00aaff;
+}
+
+/* ================= INPUT + BOTÃO ================= */
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  width: 100%;
+  max-width: 250px;
+}
+
+.input-group input,
+.input-group button {
+  height: 36px;
+}
+
+.input-group input {
+  flex: 1;
+}
+
+.input-group button {
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #202020;
+}
+
+.input-group button:hover {
+  background: #2c2c2c;
+}
+
+/* ================= BOTÕES ================= */
+button {
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:not(.btn-primary) {
+  background: #2a2a2a;
+}
+
+button:hover {
+  box-shadow: 0 0 10px #00aaff;
+}
+
+/* ================= BOTÃO PRINCIPAL ================= */
+.btn-primary {
+  width: 100%;
+  max-width: 230px;
+  height: 40px;
+
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, #00aaff, #0066ff);
+  font-weight: bold;
+
+  box-shadow: 0 0 12px rgba(0,170,255,0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 18px rgba(0,170,255,0.7);
+}
+
+/* sucesso */
+.btn-success {
+  background: linear-gradient(135deg, #00ff88, #00cc66);
+  box-shadow: 0 0 12px rgba(0,255,136,0.4);
+}
+
+.btn-success:hover {
+  box-shadow: 0 0 18px rgba(0,255,136,0.7);
+}
+
+/* ================= ERRO ================= */
+.error {
+  color: #ff4d4d;
+  font-size: 13px;
+  min-height: 15px;
+}
+
+/* ================= CADEADO ================= */
+.lock {
+  margin: 10px 0;
+}
+
+.lock-body {
+  width: 70px;
+  height: 55px;
+  background: #2a2a2a;
+  border-radius: 10px;
+  position: relative;
+}
+
+.lock-shackle {
+  width: 45px;
+  height: 35px;
+  border: 5px solid #555;
+  border-bottom: none;
+  border-radius: 30px 30px 0 0;
+
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.5s;
+}
+
+.lock-hole {
+  width: 10px;
+  height: 10px;
+  background: gold;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.lock.open .lock-shackle {
+  transform: translateX(-50%) rotate(-25deg);
+  top: -40px;
+}
+
+/* ================= POPUP ================= */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-content {
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 12px;
+  width: 260px;
+  text-align: center;
+
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  background: rgba(20,20,20,0.9);
+  color: #aaa;
+  font-size: 12px;
+  text-align: center;
+
+  padding: 10px 0;
+  border-top: 1px solid #2a2a2a;
+}
+
+/* ================= UTIL ================= */
+.hidden {
+  display: none !important;
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
