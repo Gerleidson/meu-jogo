@@ -408,10 +408,13 @@ button:hover {
   }
 
   /* 🔘 BOTÃO MENOS IMPORTANTE */
-  .input-group {
-    flex-direction: column;
-    gap: 8px;
-  }
+ .input-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
 
   .input-group button {
     height: 45px;
@@ -420,10 +423,12 @@ button:hover {
   }
 
   /* 🎮 NÍVEL MAIS LIMPO */
-  .nivel-box {
-    flex-direction: column;
-    gap: 5px;
-  }
+.nivel-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
 
   .nivel-label {
     font-size: 13px;
