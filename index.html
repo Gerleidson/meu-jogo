@@ -1,91 +1,105 @@
-  <!DOCTYPE html>
-  <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Código Secreto</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Código Secreto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-  <body>
+<body>
 
-  <div class="container">
+<div class="container">
 
-    <h1>🧩 Código Secreto</h1>
+  <h1>🧩 Código Secreto</h1>
 
-    <!-- LOGIN -->
-    <div id="loginBox" class="card">
+  <!-- LOGIN -->
+  <div id="loginBox" class="card">
 
-      <h2>🔐 Login</h2>
+    <h2>🔐 Login</h2>
 
     <form onsubmit="login(); return false;">
       <input id="user" placeholder="Usuário">
-      <input id="pass" type="password" placeholder="Senha">
+
+      <!-- 🔢 SENHA NUMÉRICA -->
+      <input id="pass"
+             type="password"
+             inputmode="numeric"
+             pattern="[0-9]*"
+             maxlength="6"
+             placeholder="Senha">
+
       <button type="submit" class="btn-primary">Entrar</button>
     </form>
 
-      <p id="error" class="error"></p>
+    <p id="error" class="error"></p>
 
-    </div>
+  </div>
 
-    <!-- JOGO -->
-    <div id="game" class="card hidden">
+  <!-- JOGO -->
+  <div id="game" class="card hidden">
 
-      <p id="welcome"></p>
+    <p id="welcome"></p>
 
-      <!-- CADEADO -->
-      <div class="lock">
-        <div class="lock-body">
-          <div class="lock-shackle"></div>
-          <div class="lock-hole"></div>
-        </div>
+    <!-- CADEADO -->
+    <div class="lock">
+      <div class="lock-body">
+        <div class="lock-shackle"></div>
+        <div class="lock-hole"></div>
       </div>
-
-      <p id="info"></p>
-
-      <!-- NÍVEL -->
-  <div class="nivel-box">
-    <span class="nivel-label">🎮 Nível</span>
-
-    <select id="nivel" onchange="mudarNivel()">
-      <option value="facil">Fácil</option>
-      <option value="medio">Médio</option>
-      <option value="dificil">Difícil</option>
-      <option value="impossivel">Impossível</option>
-    </select>
-  </div>
-
-      <!-- INPUT + BOTÃO -->
-      <div class="input-group">
-        <input id="palpite"
-              placeholder="1234"
-              onkeydown="if(event.key==='Enter') jogar()">
-
-        <button onclick="reset()">Reiniciar</button>
-      </div>
-
     </div>
 
-    <!-- LOG (fora do card) -->
-    <div id="log"></div>
+    <p id="info"></p>
 
-  </div>
+    <!-- NÍVEL -->
+    <div class="nivel-box">
+      <span class="nivel-label">🎮 Nível</span>
 
-  <!-- POPUP -->
-  <div id="popup" class="popup hidden">
-    <div class="popup-content">
-      <h2>🎉 Vitória!</h2>
-      <p id="popup-text"></p>
-  <button class="btn-primary btn-success" onclick="reiniciarJogo()">Jogar novamente</button>
+      <select id="nivel" onchange="mudarNivel()">
+        <option value="facil">Fácil</option>
+        <option value="medio">Médio</option>
+        <option value="dificil">Difícil</option>
+        <option value="impossivel">Impossível</option>
+      </select>
     </div>
+
+    <!-- INPUT + BOTÃO -->
+    <div class="input-group">
+
+      <!-- 🔢 PALPITE NUMÉRICO -->
+      <input id="palpite"
+             type="text"
+             inputmode="numeric"
+             pattern="[0-9]*"
+             maxlength="4"
+             placeholder="1234"
+             onkeydown="if(event.key==='Enter') jogar()">
+
+      <button onclick="reset()">Reiniciar</button>
+    </div>
+
   </div>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2026 Código Secreto • Desenvolvido por Gerleidson A. Bomfim</p>
-  </footer>
+  <!-- LOG -->
+  <div id="log"></div>
 
-  <script src="script.js"></script>
+</div>
 
-  </body>
-  </html>
+<!-- POPUP -->
+<div id="popup" class="popup hidden">
+  <div class="popup-content">
+    <h2>🎉 Vitória!</h2>
+    <p id="popup-text"></p>
+    <button class="btn-primary btn-success" onclick="reiniciarJogo()">Jogar novamente</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 Código Secreto • Desenvolvido por Gerleidson A. Bomfim</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

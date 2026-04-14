@@ -10,17 +10,30 @@ let venceu = false;
 
 /* ================= INICIAR ================= */
 window.onload = () => {
-  document.body.classList.add("no-scroll"); // 🔥 trava scroll
+  document.body.classList.add("no-scroll");
 
   document.getElementById("nivel").value = fase;
   configurarNivel();
   fecharPopup();
   fecharCadeado();
+
+  // 🔢 BLOQUEAR LETRAS NOS INPUTS
+  const palpite = document.getElementById("palpite");
+  const pass = document.getElementById("pass");
+
+  palpite.addEventListener("input", () => {
+    palpite.value = palpite.value.replace(/\D/g, "");
+  });
+
+  pass.addEventListener("input", () => {
+    pass.value = pass.value.replace(/\D/g, "");
+  });
 };
 
 /* ================= LOGIN ================= */
 function login() {
-  document.body.classList.remove("no-scroll"); // 🔥 libera scroll
+  document.body.classList.remove("no-scroll");
+
   const user = document.getElementById("user").value.trim();
   const pass = document.getElementById("pass").value.trim();
   const error = document.getElementById("error");
@@ -47,6 +60,9 @@ function login() {
 
   jogoIniciado = true;
   reset();
+
+  // 🎯 foco automático
+  document.getElementById("palpite").focus();
 }
 
 /* ================= NÍVEL ================= */
@@ -102,11 +118,7 @@ function jogar() {
   const inputEl = document.getElementById("palpite");
   const input = inputEl.value.trim();
 
-  if (!/^\d+$/.test(input)) {
-    alert("Digite apenas números");
-    return;
-  }
-
+  // 🔢 validação simples (já bloqueia letras via input)
   if (input.length !== tamanhoCodigo) {
     alert(`Digite ${tamanhoCodigo} números`);
     return;
@@ -133,11 +145,11 @@ function jogar() {
     jogoIniciado = false;
 
     abrirCadeado();
-
     setTimeout(mostrarPopup, 800);
   }
 
   inputEl.value = "";
+  inputEl.focus(); // 🔁 mantém foco
 }
 
 /* ================= VERIFICAR ================= */
@@ -212,7 +224,8 @@ function fecharPopup() {
 
 function reiniciarJogo() {
   fecharPopup();
-  reset();          // 🔥 reseta tudo
-  jogoIniciado = true; // 🔥 permite jogar novamente
-    document.getElementById("palpite").focus();
+  reset();
+  jogoIniciado = true;
+
+  document.getElementById("palpite").focus();
 }
