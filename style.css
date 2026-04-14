@@ -335,3 +335,103 @@ button:hover {
   overflow: hidden;
   height: 100vh;
 }
+
+
+
+
+
+
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 480px) {
+
+  .container {
+    padding: 15px;
+    padding-top: 20px;
+  }
+
+  h1 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  #log {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  input,
+  select,
+  .btn-primary {
+    max-width: 100%;
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .input-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .input-group button {
+    width: 100%;
+  }
+
+  .nivel-box {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .popup-content {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .footer {
+    font-size: 11px;
+    padding: 8px;
+  }
+
+  .lock-body {
+    transform: scale(0.9);
+  }
+
+}
+
+
+
+/* suaviza tudo */
+* {
+  box-sizing: border-box;
+}
+
+/* animação suave geral */
+.card,
+button,
+input,
+select {
+  transition: all 0.25s ease;
+}
+
+/* melhora toque no mobile */
+button {
+  min-height: 40px;
+}
+
+/* evita zoom no iPhone */
+input,
+select {
+  font-size: 16px;
+}
+
+/* melhora scroll no mobile */
+#log {
+  -webkit-overflow-scrolling: touch;
+}
